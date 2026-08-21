@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lumière Salon & Beauty Studio — premium hair, beauty and wellness services." />
+  <meta name="theme-color" content="#17130f" />
+  <title>Lumière Salon — Beauty, Hair & Wellness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--ink:#17130f;--cream:#f8f3ed;--paper:#fffaf5;--muted:#736a61;--gold:#b88a4a;--line:#e9dfd3;--dark:#211b16;--radius:24px;--shadow:0 20px 50px rgba(40,25,12,.10)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    .container{width:min(1160px,92%);margin:auto}
+    .topbar{background:var(--dark);color:#f7eee5;font-size:13px;padding:9px 0}
+    .topbar .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    header{position:sticky;top:0;z-index:20;background:rgba(248,243,237,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(233,223,211,.7)}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .brand{font-family:"Playfair Display",serif;font-size:27px;font-weight:700;letter-spacing:.5px}
+    .brand span{display:block;font:600 9px "DM Sans";letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-top:-4px}
+    nav ul{display:flex;align-items:center;gap:28px;list-style:none;font-size:14px;font-weight:600}
+    nav a{position:relative}
+    nav a::after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:1.5px;background:var(--gold);transition:.25s}
+    nav a:hover::after{width:100%}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:13px 21px;font:700 13px "DM Sans";cursor:pointer;transition:.25s}
+    .btn-dark{background:var(--ink);color:white}.btn-dark:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(23,19,15,.18)}
+    .btn-light{border:1px solid rgba(255,255,255,.28);color:#fff;background:rgba(255,255,255,.08)}
+    .menu{display:none;border:0;background:none;font-size:27px;cursor:pointer}
+    .hero{padding:42px 0 72px}
+    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:48px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:18px}
+    .eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
+    h1,h2,h3{font-family:"Playfair Display",serif;line-height:1.08}
+    h1{font-size:clamp(50px,7vw,78px);max-width:720px}
+    .hero p{color:var(--muted);font-size:17px;max-width:590px;margin:24px 0 31px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+    .hero-note{display:flex;gap:24px;margin-top:34px;flex-wrap:wrap}
+    .hero-note div{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700}
+    .check{width:23px;height:23px;border-radius:50%;display:grid;place-items:center;background:#e6dacd;color:#70502b;font-size:12px}
+    .hero-card{height:605px;border-radius:34px;overflow:hidden;position:relative;box-shadow:var(--shadow);background:#d9cdc1}
+    .hero-card img{object-position:center}
+    .hero-badge{position:absolute;left:20px;bottom:20px;background:rgba(255,250,245,.92);backdrop-filter:blur(10px);padding:15px 17px;border-radius:17px;display:flex;align-items:center;gap:13px;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+    .hero-badge strong{font-family:"Playfair Display";font-size:24px}.hero-badge small{display:block;color:var(--muted);font-size:11px}
+    section{padding:90px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:38px}
+    .section-head h2{font-size:clamp(36px,5vw,54px)}
+    .section-head p{max-width:470px;color:var(--muted)}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{background:var(--paper);padding:31px;border:1px solid var(--line);border-radius:var(--radius);transition:.25s}
+    .service:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .icon{width:48px;height:48px;border-radius:14px;background:#ede3d8;display:grid;place-items:center;font-size:21px;margin-bottom:23px}
+    .service h3{font-size:27px;margin-bottom:9px}.service p{color:var(--muted);font-size:14px}.service .price{display:block;margin-top:19px;color:var(--gold);font-weight:800;font-size:13px}
+    .dark-section{background:var(--dark);color:#f9f1e8}
+    .dark-section .section-head p{color:#c9bdb0}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+    .about-img{height:560px;border-radius:30px;overflow:hidden}.about-copy p{color:#c9bdb0;margin:22px 0;font-size:16px}.about-points{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+    .about-point{padding:17px;border:1px solid rgba(255,255,255,.1);border-radius:17px}.about-point strong{font-family:"Playfair Display";font-size:22px;display:block}.about-point span{font-size:12px;color:#b7aa9c}
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .price-card{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:30px;position:relative}
+    .price-card.featured{background:#2b231c;color:white;border-color:#2b231c;transform:translateY(-9px)}
+    .tag{position:absolute;right:17px;top:17px;padding:6px 10px;border-radius:999px;background:#e8d1b1;color:#5e431f;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+    .price-card h3{font-size:30px}.amount{font-family:"Playfair Display";font-size:46px;margin:18px 0}.amount small{font:500 12px "DM Sans";color:var(--muted)}
+    .price-card ul{list-style:none;border-top:1px solid var(--line);padding-top:17px}.featured ul{border-color:rgba(255,255,255,.14)}.price-card li{margin:11px 0;color:var(--muted);font-size:13px}.featured li{color:#d9cdc1}.price-card li::before{content:"✓";color:var(--gold);margin-right:9px;font-weight:800}
+    .gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:240px 240px;gap:14px}.gallery div{border-radius:22px;overflow:hidden}.gallery div:first-child{grid-row:span 2}.gallery img{transition:.35s}.gallery div:hover img{transform:scale(1.04)}
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.quote{background:var(--paper);padding:28px;border:1px solid var(--line);border-radius:24px}.stars{color:var(--gold);letter-spacing:2px;margin-bottom:14px}.quote p{font-family:"Playfair Display";font-size:22px;line-height:1.35}.client{display:flex;align-items:center;gap:11px;margin-top:20px;color:var(--muted);font-size:12px}.avatar{width:37px;height:37px;border-radius:50%;display:grid;place-items:center;background:#e9ddd0;color:#71502f;font-weight:800}
+    .booking{padding:28px 0 90px}.booking-box{background:linear-gradient(135deg,#8d6a45,#c39867);border-radius:32px;padding:55px;color:white;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}.booking h2{font-size:48px}.booking p{margin-top:15px;color:#f4e9dd;max-width:600px}.booking-actions{display:flex;justify-content:flex-end;gap:11px;flex-wrap:wrap}
+    footer{background:#120f0c;color:#cabfb2;padding:45px 0 25px}.footer-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}.footer-brand{color:#fff}.footer-brand p{max-width:340px;margin-top:10px;font-size:13px}.footer-links{display:flex;gap:55px}.footer-links div{display:flex;flex-direction:column;gap:9px;font-size:12px}.footer-links strong{font-size:12px;color:#fff;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px}.copyright{border-top:1px solid rgba(255,255,255,.08);margin-top:35px;padding-top:20px;font-size:11px}
+    @media(max-width:900px){nav ul{gap:16px}.hero-grid,.about-grid,.booking-box{grid-template-columns:1fr}.hero-card{height:470px}.services,.pricing,.testimonials{grid-template-columns:1fr 1fr}.booking-actions{justify-content:flex-start}}
+    @media(max-width:680px){.topbar .container{justify-content:center}.nav{min-height:67px}.menu{display:block}.nav-cta,nav ul{display:none}nav.open ul{display:flex;position:absolute;top:68px;left:0;right:0;background:var(--paper);flex-direction:column;padding:23px;border-bottom:1px solid var(--line);box-shadow:0 18px 35px rgba(0,0,0,.08)}.nav.open .nav-cta{display:inline-flex;margin-left:auto;margin-right:7px}.hero{padding-top:30px}.hero-card{height:390px}.section-head{display:block}.section-head p{margin-top:14px}.services,.pricing,.testimonials{grid-template-columns:1fr}.price-card.featured{transform:none}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:180px 180px}.gallery div:first-child{grid-row:auto;grid-column:span 2}.about-img{height:390px}.about-points{grid-template-columns:1fr 1fr}.booking-box{padding:35px 25px}.booking h2{font-size:39px}.footer-links{width:100%;gap:35px}.footer-top{display:block}.footer-links{margin-top:30px}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container"><span>Open today · 9:00 AM — 8:00 PM</span><span>Appointments · +91 98765 43210</span></div></div>
+  <header><div class="container nav" id="nav"><a class="brand" href="#home">Lumière<span>Salon & Beauty Studio</span></a><nav><ul><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#pricing">Packages</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul></nav><a class="btn btn-dark nav-cta" href="#contact">Book Appointment</a><button class="menu" aria-label="Open menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button></div></header>
+  <main id="home">
+    <section class="hero"><div class="container hero-grid"><div><div class="eyebrow">Beauty, redefined</div><h1>Feel beautiful. Look unforgettable.</h1><p>A modern salon for effortless hair, flawless skin and feel-good moments. Thoughtful services, premium products and a team that listens.</p><div class="hero-actions"><a class="btn btn-dark" href="#contact">Book your visit <span>↗</span></a><a class="btn" style="border:1px solid var(--line);background:var(--paper)" href="#services">Explore services</a></div><div class="hero-note"><div><span class="check">✓</span> Expert stylists</div><div><span class="check">✓</span> Premium products</div><div><span class="check">✓</span> Hygienic studio</div></div></div><div class="hero-card"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1100&q=85" alt="Salon styling session"/><div class="hero-badge"><div><strong>4.9/5</strong><small>Guest rating · 1,200+ visits</small></div><span>✦</span></div></div></div></section>
+    <section id="services"><div class="container"><div class="section-head"><div><div class="eyebrow">Our services</div><h2>Everything you need, beautifully done.</h2></div><p>From a quick refresh to a complete transformation, every service is tailored to your style, routine and occasion.</p></div><div class="services"><article class="service"><div class="icon">✂</div><h3>Hair Studio</h3><p>Precision cuts, blowouts, color, highlights and occasion styling by experienced professionals.</p><span class="price">From ₹499</span></article><article class="service"><div class="icon">✦</div><h3>Skin & Glow</h3><p>Relaxing facials, cleanup, de-tan and glow rituals designed around your skin's needs.</p><span class="price">From ₹599</span></article><article class="service"><div class="icon">♡</div><h3>Beauty Bar</h3><p>Manicure, pedicure, brows, waxing and finishing touches for a polished look.</p><span class="price">From ₹249</span></article></div></div></section>
+    <section class="dark-section" id="about"><div class="container about-grid"><div class="about-img"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=85" alt="Elegant salon interior"/></div><div class="about-copy"><div class="eyebrow">The Lumière experience</div><h2>More than a salon. Your reset button.</h2><p>We created Lumière for people who want great beauty services without the rush. Our studio blends warm hospitality, modern techniques and carefully selected products.</p><p>Every appointment starts with a real consultation, so the result feels like you — only more polished.</p><div class="about-points"><div class="about-point"><strong>08+</strong><span>Years of craft</span></div><div class="about-point"><strong>25+</strong><span>Signature services</span></div><div class="about-point"><strong>12k+</strong><span>Happy guests</span></div><div class="about-point"><strong>4.9★</strong><span>Average rating</span></div></div></div></div></section>
+    <section id="pricing"><div class="container"><div class="section-head"><div><div class="eyebrow">Signature packages</div><h2>Choose your beauty moment.</h2></div><p>Simple packages for everyday upkeep, special occasions and full self-care days.</p></div><div class="pricing"><article class="price-card"><h3>Essential</h3><div class="amount">₹999 <small>/ visit</small></div><ul><li>Hair wash & styling</li><li>Express facial</li><li>Brows</li><li>Finishing touch</li></ul></article><article class="price-card featured"><span class="tag">Most loved</span><h3>Signature</h3><div class="amount">₹1,799 <small>/ visit</small></div><ul><li>Premium haircut & styling</li><li>Glow facial</li><li>Manicure</li><li>Brows & finishing</li></ul></article><article class="price-card"><h3>Occasion</h3><div class="amount">₹2,999 <small>/ visit</small></div><ul><li>Hair styling</li><li>Luxury facial</li><li>Manicure & pedicure</li><li>Party-ready finishing</li></ul></article></div></div></section>
+    <section id="gallery"><div class="container"><div class="section-head"><div><div class="eyebrow">Inside Lumière</div><h2>A space made to slow down.</h2></div><p>Warm textures, clean details and a calm atmosphere — designed to make your appointment feel like a small escape.</p></div><div class="gallery"><div><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=85" alt="Salon interior"/></div><div><img src="https://images.unsplash.com/photo-1527799820374-dcf8f4d6f2e9?auto=format&fit=crop&w=800&q=85" alt="Hair styling"/></div><div><img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=800&q=85" alt="Beauty treatment"/></div><div><img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=800&q=85" alt="Salon tools"/></div><div><img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=800&q=85" alt="Beauty service"/></div></div></div></section>
+    <section><div class="container"><div class="section-head"><div><div class="eyebrow">Guest love</div><h2>What our clients say.</h2></div></div><div class="testimonials"><article class="quote"><div class="stars">★★★★★</div><p>“The kind of salon where you leave feeling lighter, happier and completely yourself.”</p><div class="client"><span class="avatar">A</span><span>Ananya · Regular guest</span></div></article><article class="quote"><div class="stars">★★★★★</div><p>“Beautiful space, lovely team and the haircut was exactly what I asked for.”</p><div class="client"><span class="avatar">R</span><span>Riya · Hair client</span></div></article><article class="quote"><div class="stars">★★★★★</div><p>“My go-to before every event. The service feels premium without feeling intimidating.”</p><div class="client"><span class="avatar">N</span><span>Neha · Occasion client</span></div></article></div></div></section>
+    <section class="booking" id="contact"><div class="container"><div class="booking-box"><div><div class="eyebrow" style="color:#f5d8b0">Ready when you are</div><h2>Your next beauty day starts here.</h2><p>Tell us what you’re looking for and our team will help you pick the right service and time.</p></div><div class="booking-actions"><a class="btn btn-dark" style="background:#fff;color:#211b16" href="https://wa.me/919876543210?text=Hi%20Lumi%C3%A8re%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp us ↗</a><a class="btn btn-light" href="tel:+919876543210">Call +91 98765 43210</a></div></div></div></section>
+  </main>
+  <footer><div class="container"><div class="footer-top"><div class="footer-brand"><a class="brand" href="#home" style="color:#fff">Lumière<span>Salon & Beauty Studio</span></a><p>Premium beauty services in a warm, modern space. Designed around you.</p></div><div class="footer-links"><div><strong>Visit</strong><span>24 Rose Avenue</span><span>New Delhi, India</span><span>Mon–Sun · 9 AM–8 PM</span></div><div><strong>Connect</strong><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/919876543210" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:hello@lumieresalon.in">Email</a></div></div></div><div class="copyright">© <span id="year"></span> Lumière Salon & Beauty Studio. Sample website by Manav Sols.</div></div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));</script>
+</body>
+</html>
